@@ -1,7 +1,7 @@
 const booksReducer = (state = [], action)=>{
     switch (action.type) {
         case 'ADD':
-            return [...state]
+            return action.payload
         default:
             return state
     }
