@@ -1,10 +1,13 @@
-
-
+import NavigationBar from './Components/NavigationBar'
+import BooksList from './Components/BooksList'
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <>
+      <header>
+        <NavigationBar/>
+      </header>
+      <BooksList/>
+    </>
   );
 }
 
