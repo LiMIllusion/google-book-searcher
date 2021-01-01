@@ -8,7 +8,7 @@ function BooksList() {
         // axios.get(`https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=${process.env.REACT_APP_KEY}`).then((res)=>{
         //     setProva(res)
         // }).catch((e)=>console.log(e))
-    const listOfBooks = useSelector(state =>state)
+    const listOfBooks = useSelector(state =>state.booksList)
     return (
         <>
             <Container>

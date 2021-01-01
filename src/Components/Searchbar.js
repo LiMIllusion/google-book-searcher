@@ -1,21 +1,36 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { Form, FormControl, Button } from 'react-bootstrap'
-import {useDispatch} from 'react-redux'
-import {newQuery} from './../Actions'
+import { useDispatch, useSelector } from 'react-redux'
+import { newQuery, searchValue } from './../Actions'
 import RequestExample from './RequestExample'
+import axios from 'axios'
 
 function Searchbar(props) {
-    //const listOfBooks = useSelector(state => state)
+    // const listOfBooks = useSelector(state => state.booksList)
+    const searchString = useSelector(state => state.searchParam)
     const dispatch = useDispatch()
-    useEffect(()=>{
-        dispatch(newQuery(RequestExample.data.items))
-    }, [])
-    const classNames ="ml-auto mr-auto ".concat(props.first ? "d-none d-md-block" : "")
-    console.log(classNames)
+    // useEffect(() => {
+    //     dispatch(newQuery(RequestExample.data.items))
+    // }, [])
+    const classNames = "ml-auto mr-auto ".concat(props.first ? "d-none d-md-block" : "")
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.get('https://www.googleapis.com/books/v1/volumes', { 
+            params: { 
+                q: searchString, 
+                key: process.env.REACT_APP_KEY } 
+            }).then((res) => {
+                dispatch(newQuery(res.data.items))
+        }).catch((e) => console.log(e))
+    }
+    const handleChange = (e) => {
+        console.log(e.target.value)
+        dispatch(searchValue(e.target.value))
+    }
     return (
-        <Form inline className={classNames}>
+        <Form inline className={classNames} onSubmit={handleSubmit} onChange={handleChange}>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" style={props.first ? {} : { width: '100%' }} />
-            <Button variant="outline-light" className={props.first ? '' : 'btn-block my-1'}>Search</Button>
+            <Button type='submit' variant="outline-light" className={props.first ? '' : 'btn-block my-1'}>Search</Button>
         </Form>
     )
 }

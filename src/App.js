@@ -1,6 +1,7 @@
 import NavigationBar from './Components/NavigationBar'
 import BooksList from './Components/BooksList'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import BookInfo from './Pages/BookInfo'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route exact path='/'>
             <BooksList />
           </Route>
+          <Route path='/book/:id' children={<BookInfo/>} />
         </Switch>
       </Router>
     </>
