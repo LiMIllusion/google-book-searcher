@@ -1,7 +1,7 @@
 const homePageReducer = (state = true, action)=>{
     switch (action.type) {
         case 'CHANGE':
-            return !state
+            return action.payload
         default:
             return state
     }

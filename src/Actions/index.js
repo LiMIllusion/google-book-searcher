@@ -16,3 +16,9 @@ export const searchValue = (title)=>{
         payload: title
     }
 }
+export const isItHome = (isHome)=>{
+    return {
+        type : 'CHANGE',
+        payload: isHome
+    }
+}

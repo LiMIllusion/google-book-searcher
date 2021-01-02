@@ -1,17 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Form, FormControl, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { newQuery, searchValue } from './../Actions'
-import RequestExample from './RequestExample'
+import { newQuery, searchValue} from './../Actions'
 import axios from 'axios'
 
 function Searchbar(props) {
-    // const listOfBooks = useSelector(state => state.booksList)
     const searchString = useSelector(state => state.searchParam)
     const dispatch = useDispatch()
-    // useEffect(() => {
-    //     dispatch(newQuery(RequestExample.data.items))
-    // }, [])
     const classNames = "ml-auto mr-auto ".concat(props.first ? "d-none d-md-block" : "")
     const handleSubmit = (e) => {
         e.preventDefault()

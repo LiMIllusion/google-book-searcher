@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Image } from 'react-bootstrap'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 
 function VolumeInfo(props) {
@@ -31,7 +31,7 @@ function VolumeInfo(props) {
                         <p className='px-3 py-0 my-0 text-muted'>{props.publisher || ''}{props.publisher && ', '}{props.publishedDate || ''}</p>
                     </Row>
                     <Row>
-                        <p className='px-3 py-0 my-0 text-muted'>{props.pageCount || ''} pagine</p>
+                        <p className='px-3 py-0 my-0 text-muted'>{props.pageCount || ''} {props.pageCount !=='' ? 'pagine' : ''}</p>
                     </Row>
                 </Col>
             </Row>
@@ -46,12 +46,12 @@ function VolumeInfo(props) {
     )
 }
 
-VolumeInfo.propTypes = {
-    title: PropTypes.string.isRequired,
-    imageLinks: PropTypes.object.isRequired,
-    canonicalVolumeLink: PropTypes.string.isRequired,
-    authors: PropTypes.array.isRequired,
-    categories: PropTypes.array.isRequired
-}
+// VolumeInfo.propTypes = {
+//     title: PropTypes.string.isRequired,
+//     imageLinks: PropTypes.object.isRequired,
+//     canonicalVolumeLink: PropTypes.string.isRequired,
+//     authors: PropTypes.array.isRequired,
+//     categories: PropTypes.array.isRequired
+// }
 
 export default VolumeInfo
