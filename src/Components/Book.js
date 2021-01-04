@@ -1,6 +1,5 @@
 import React from 'react'
 import { Col, Card } from 'react-bootstrap'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 function Book(props) {
@@ -22,9 +21,4 @@ function Book(props) {
     )
 }
 
-Book.propTypes = {
-    title: PropTypes.string.isRequired,
-    imageLinks: PropTypes.object.isRequired,
-    canonicalVolumeLink: PropTypes.string.isRequired
-}
 export default Book

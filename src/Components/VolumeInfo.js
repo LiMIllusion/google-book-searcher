@@ -1,6 +1,5 @@
 import React from 'react'
 import { Row, Col, Image } from 'react-bootstrap'
-// import PropTypes from 'prop-types'
 
 
 function VolumeInfo(props) {
@@ -45,13 +44,5 @@ function VolumeInfo(props) {
         </>
     )
 }
-
-// VolumeInfo.propTypes = {
-//     title: PropTypes.string.isRequired,
-//     imageLinks: PropTypes.object.isRequired,
-//     canonicalVolumeLink: PropTypes.string.isRequired,
-//     authors: PropTypes.array.isRequired,
-//     categories: PropTypes.array.isRequired
-// }
 
 export default VolumeInfo
