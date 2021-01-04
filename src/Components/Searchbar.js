@@ -15,7 +15,7 @@ function Searchbar(props) {
                 q: searchString, 
                 key: process.env.REACT_APP_KEY } 
             }).then((res) => {
-                dispatch(newQuery(res.data.items))
+                if(res.status >= 200 && res.status < 300){dispatch(newQuery(res.data.items))}
         }).catch((e) => console.log(e))
     }
     const handleChange = (e) => {
