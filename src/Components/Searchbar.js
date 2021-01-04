@@ -24,8 +24,8 @@ function Searchbar(props) {
     }
     return (
         <Form inline className={classNames} onSubmit={handleSubmit} onChange={handleChange}>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" style={props.first ? {} : { width: '100%' }} />
-            <Button type='submit' variant="outline-light" className={props.first ? '' : 'btn-block my-1'}>Search</Button>
+            <FormControl type="text" placeholder="I promessi sposi..." className="mr-sm-2" style={props.first ? {} : { width: '100%' }} />
+            <Button type='submit' variant="outline-light" className={props.first ? '' : 'btn-block my-1'}>Cerca</Button>
         </Form>
     )
 }
